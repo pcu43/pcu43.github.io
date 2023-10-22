@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Java Page"
+title: "Java"
 permalink: /java
 ---
 
