@@ -20,6 +20,8 @@ How cool is that.
 
 Creating a new project using Maven:
 
-`mvn archetype:generate -DgroupId=org.fuzzier -DartifactId=demo -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false`
+```
+mvn archetype:generate -DgroupId=org.fuzzier -DartifactId=demo -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
 
 where `demo` is the name of the project and the folder that will get created as the root directory of the project. Don't know why it has to download do much dependencies though.
