@@ -98,3 +98,29 @@ And if we want to sort on multiple fields, we can do that too:
 [{ "name": "spot", "weight": 10 }, { "name": "biscuit", "weight": 15 }, { "name": "fluffy", "weight": 15 }, { "name": "spike", "weight": 20 }, { "name": "comet", "weight": 30 }]
 ```
 
+Display the elements of a list as a space-separated String:
+
+```
+$ cat Demo0002.java 
+import java.util.stream.Collectors;
+import java.util.*;
+
+public class Demo0002 {
+  public static void main(String[] args) {
+    List<Integer> values = new ArrayList<>();
+    values.add(2);
+    values.add(4);
+    values.add(6);
+    values.add(8);
+    System.out.println("Using default toString():");
+    System.out.println(values);
+    System.out.println("Using stream with Collectors.joining:");
+    System.out.println(values.stream().map(Object::toString).collect(Collectors.joining(" ")));
+  }
+}
+$ java Demo0002
+Using default toString():
+[2, 4, 6, 8]
+Using stream with Collectors.joining:
+2 4 6 8
+```
