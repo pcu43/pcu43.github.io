@@ -124,3 +124,58 @@ Using default toString():
 Using stream with Collectors.joining:
 2 4 6 8
 ```
+
+Count the number of characters in a String:
+
+```
+$ cat Demo0003.java 
+public class Demo0003 {
+  public static void main(String[] args) {
+    if (args.length != 2) {
+      System.out.println("Usage: java Demo0003 <string> <char>");
+      System.exit(0);
+    }
+    String s = args[0];
+    char c = args[1].charAt(0);
+    long i = s.chars().filter(ch -> ch == c).count();
+    System.out.printf("There are %d occurences of the character '%s' in the string \"%s\"\n", i, c, s);
+  }
+}
+$ java Demo0003 "This is a dog. Woof!" o
+There are 3 occurences of the character 'o' in the string "This is a dog. Woof!"
+```
+
+Count the number of all characters in a String and store the results in a Map:
+
+```
+$ cat Demo0004.java 
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.function.Function;
+
+public class Demo0004 {
+  public static void main(String[] args) {
+    if (args.length != 1) {
+      System.out.println("Usage: java Demo0003 <string>");
+      System.exit(0);
+    }
+    String s = args[0];
+    Map<Character,Long> charMap = s.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    charMap.forEach((k, v) -> System.out.printf("%s: %d\n", k, v));
+  }
+}
+$ java Demo0004 "This is a dog. Woof!"
+ : 4
+!: 1
+a: 1
+s: 2
+d: 1
+T: 1
+f: 1
+W: 1
+g: 1
+h: 1
+i: 2
+.: 1
+o: 3
+```
