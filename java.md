@@ -179,3 +179,13 @@ i: 2
 .: 1
 o: 3
 ```
+
+Summing up all the numbers in a Set (or List):
+
+```
+Set<Integer> set = new HashSet<>();
+set.add(5);
+// ...add more numbers...
+set.add(25);
+int sum = set.stream().mapToInt(Integer::intValue).sum();
+```
