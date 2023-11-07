@@ -189,3 +189,25 @@ set.add(5);
 set.add(25);
 int sum = set.stream().mapToInt(Integer::intValue).sum();
 ```
+
+Convert a long to String:
+
+```
+long l = 12345L;
+String s = Long.toString(l);
+```
+
+Convert a character to the number it represents (NOT convert it to its char value):
+
+```
+String s = "12345";
+int i = Character.getNumericValue(s.charAt(1)); // i=2
+```
+
+Convert double to long:
+
+```
+double d = 1234.5678;
+long l = Double.valueOf(d).longValue();
+```
+
