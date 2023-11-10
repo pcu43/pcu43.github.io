@@ -211,8 +211,7 @@ double d = 1234.5678;
 long l = Double.valueOf(d).longValue();
 ```
 
-The way to count the occurences of ints in an int array:
-
+The way to count the occurences of `int`s in an `int` array:
 ```
 public static Map<Integer, Long> getFrequencyMap(int[] numbers) {
         return Arrays.stream(numbers) // Use Java 8 stream
@@ -230,3 +229,17 @@ Map<Integer,Long> map = new HashMap<>();
 ...
 Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
 ```
+
+Convert a `List` of `Integer`s into a `String`:
+```
+List<Integer> list = new ArrayList<>();
+...
+String s = list.stream().map(String::valueOf).collect(Collectors.joining());
+```
+
+Convert a binary String to the `int` equivalent:
+```
+String s = "01011101";
+int i = Integer.parseInt(s, 2);
+```
+
