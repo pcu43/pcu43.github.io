@@ -243,3 +243,9 @@ String s = "01011101";
 int i = Integer.parseInt(s, 2);
 ```
 
+Remove all non-alphanumeric characters from String:
+```
+String s = "...";
+s = s.replaceAll("[^a-zA-Z0-9]", "");
+```
+
