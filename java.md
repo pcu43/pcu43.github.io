@@ -211,3 +211,15 @@ double d = 1234.5678;
 long l = Double.valueOf(d).longValue();
 ```
 
+The way to count the occurences of ints in an int array:
+
+```
+public static Map<Integer, Long> getFrequencyMap(int[] numbers) {
+        return Arrays.stream(numbers) // Use Java 8 stream
+                .boxed() // convert IntStream to Stream<Integer>
+                .collect(Collectors.groupingBy(
+                        Function.identity(), // Key - the number
+                        Collectors.counting() // Value - occurrences of the number
+                ));
+    }
+```
