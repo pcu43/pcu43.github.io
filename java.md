@@ -249,3 +249,23 @@ String s = "...";
 s = s.replaceAll("[^a-zA-Z0-9]", "");
 ```
 
+Sorting by multiple fields:
+```
+class Student {
+  int id;
+  String name;
+  double gpa;
+  public int getId() { return id; }
+  public String getName() { return name; }
+  publib double getGpa() { return id; }
+}
+...
+  public static void main(String[] args) {
+    List<Student> students = new ArrayList<>();
+    ...
+    Collections.sort(students, Comparator.comparing(Student::getGpa, Comparator.reverseOrder()).thenComparing(Comparator.comparing(Student::getName)));
+    ...
+  }
+...
+```
+
