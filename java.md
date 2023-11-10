@@ -223,3 +223,10 @@ public static Map<Integer, Long> getFrequencyMap(int[] numbers) {
                 ));
     }
 ```
+
+Get the key of the max value in a `Map`:
+```
+Map<Integer,Long> map = new HashMap<>();
+...
+Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+```
