@@ -269,3 +269,18 @@ class Student {
 ...
 ```
 
+Convert `int` to bit string, then reverse it, and convert back to `int`:
+```
+int i = ...;
+String s = Integer.toBinaryString(i);
+StringBuilder sb = new StringBuilder(s);
+sb = sb.reverse();
+i = Integer.parseInt(sb.toString(), 2);
+```
+
+Zero pad a binary string:
+```
+int i = ...;
+BigInteger bi = new BigInteger(Integer.toBinaryString(i));
+String s = String.format("%032d", bi); // display value as 32-bits
+```
